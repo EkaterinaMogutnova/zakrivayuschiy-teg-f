@@ -1,1 +1,20 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font-family: "Inter-Variable";
+  --accent-font-family: "Press Start 2P";
+  --font-weight-main: 400;
+  --font-weight-title: 700;
+  --max-content-width: 1440px;
+  --accent-color: #000;
+  --bg-color: #fff;
+  --main-img: url("../images/maxim-berg-TrI2kGN85ck-unsplash-_1_.png");
+  --page-img: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    /* 2. Вертикальные полоски (повторяющиеся) */
+      repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    /* 3. Плавный градиент сверху вниз (затемнение) */
+      linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+}
