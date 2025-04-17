@@ -153,7 +153,6 @@
   color: var(--bg-color);
   z-index: 10;
   position: relative;
-  line-height: 90%;
 }
 .card__like-button {
   min-width: 130px;
@@ -298,7 +297,8 @@
   min-height: 38px;
 }
 dialog::backdrop {
-  background-image: var(--page-img);
+  background-color: var(--accent-color);
+  opacity: 0.75;
 }
 @media (width < 376px) {
   .button__save {
