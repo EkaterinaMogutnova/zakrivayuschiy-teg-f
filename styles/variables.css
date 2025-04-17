@@ -13,9 +13,9 @@
       #d3d3d3 0 2px,
       transparent 2px 4px
     ),
-    /* 2. Вертикальные полоски (повторяющиеся) */
+    /*  Вертикальные полоски (повторяющиеся) */
       repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
-    /* 3. Плавный градиент сверху вниз (затемнение) */
+    /*  Плавный градиент сверху вниз (затемнение) */
       linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
     --contour-color:#000;
     --animation-fill-color:#FF0000;
