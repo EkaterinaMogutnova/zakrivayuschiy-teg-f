@@ -304,6 +304,7 @@ dialog::backdrop {
   .button__save {
     flex-direction: column;
     gap: 8px;
+    min-width: 306px;
   }
 
   .icon-save {
