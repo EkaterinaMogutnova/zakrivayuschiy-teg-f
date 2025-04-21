@@ -49,7 +49,7 @@
   border: 2px solid var(--accent-color);
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0
     clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-  font-family: var(--accent-font-family), monospace;
+  font-family: var(--accent-font-family), fantasy;
   background-color: var(--bg-color);
 }
 .page__section {
@@ -113,16 +113,24 @@
   color: var(--accent-color);
   inset-block-start: 25px;
   inset-inline-end: 25px;
-  font-family: var(--accent-font-family), monospace;
+  font-family: var(--accent-font-family), fantasy;
   font-weight: var(--font-weight-main);
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px var(--bg-color);
+  text-shadow: 1px 1px 0 var(--bg-color), -1px 1px 0 var(--bg-color),
+    1px -1px 0 var(--bg-color), -1px -1px 0 var(--bg-color);
 }
-@supports (text-stroke: 1px var(--bg-color)) {
+@supports (
+  text-stroke: 1px var(--bg-color) or
+    (
+      -webkit-text-stroke: 1px var(--bg-color),
+    )
+) {
   .card__image-label {
     text-stroke: 1px var(--bg-color);
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-shadow: none;
   }
 }
 .card__description-text {
@@ -147,7 +155,7 @@
   background-color: transparent;
 }
 .button__text {
-  font-family: var(--accent-font-family), monospace;
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   mix-blend-mode: difference;
   color: var(--bg-color);
@@ -182,6 +190,9 @@
   border: 2px solid transparent;
   cursor: pointer;
   transition: border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  height: 38px;
 }
 /*анимации, ховеры ..*/
 .like-icon .core {
@@ -235,23 +246,7 @@
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s ease-in 0.3s 1 alternate;
 }
-@keyframes heart {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.25);
-  }
-}
-@keyframes sparks {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.footer {
+.dialog-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -284,7 +279,7 @@
 .save-dialog__content {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 20px;
   padding-bottom: 30px;
 }
 .save-dialog__icon {
@@ -295,6 +290,7 @@
   inline-size: 100%;
   min-width: 293px;
   min-height: 38px;
+  text-transform: uppercase;
 }
 dialog::backdrop {
   background-color: var(--accent-color);
@@ -310,5 +306,8 @@ dialog::backdrop {
   .icon-save {
     block-size: 28px;
     inline-size: 28px;
+  }
+  .card__image-label {
+    inset-inline-end: 13px;
   }
 }
